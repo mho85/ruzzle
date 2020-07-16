@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/App.scss'
 
 import Letters from './blocks/Letters'
@@ -52,6 +52,10 @@ const randomLetters = () => {
 }
 
 export default function App() {
+
+  // GAME
+  const [foundWords, setFoundWords] = useState(["a"])
+
   const letters = randomLetters()
   console.log(letters)
 
@@ -60,6 +64,7 @@ export default function App() {
       <p>Ruzzle</p>
       <Letters letters={letters} />
       <AddWord />
+      <p>{foundWords.length > 0 && foundWords[foundWords.length - 1]}</p>
     </div>
   )
 }

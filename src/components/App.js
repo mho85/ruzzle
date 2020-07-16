@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/App.scss'
 
 import Letters from './blocks/Letters'
+import AddWord from './blocks/AddWord'
 
 const squareSize = 4
 
@@ -58,6 +59,7 @@ export default function App() {
     <div id="app-container">
       <p>Ruzzle</p>
       <Letters letters={letters} />
+      <AddWord />
     </div>
   )
 }

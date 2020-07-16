@@ -63,11 +63,6 @@ const randomLetters = () => {
   return letters
 }
 
-/** Retrieve time left */
-const getTimeLeft = (timer) => {
-  return Math.ceil((timer._idleStart + timer._idleTimeout - Date.now()) / 1000)
-}
-
 export default function App() {
 
   // State
@@ -82,8 +77,8 @@ export default function App() {
         setOngoingGame(false)
       }, GAME_SECONDS)
 
-      let gameStart = new Date();
-      let gameEnd = gameStart.setDate(gameStart.getMinutes() + GAME_SECONDS / 60000)
+      // let gameStart = new Date();
+      // let gameEnd = gameStart.setDate(gameStart.getMinutes() + GAME_SECONDS / 60000)
 
     }
   }, [ongoingGame])

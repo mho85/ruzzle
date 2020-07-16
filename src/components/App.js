@@ -71,6 +71,6 @@ export default function App() {
         <p>Mots trouvés: {foundWords.length} sur {53}</p>
         <p><i>(Cliquez sur un mot pour connaître la définition)</i></p>
       </div>
-    </div>
+    </div >
   )
 }

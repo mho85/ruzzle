@@ -1,0 +1,10 @@
+#letters-container {
+	display: flex;
+	flex-direction: column;
+
+	#square-row {
+		width: 80%;
+		display: flex;
+		flex-direction: row;
+	}
+}

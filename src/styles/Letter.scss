@@ -1,0 +1,13 @@
+$square-size: 2em;
+
+#letter-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: $square-size;
+	height: $square-size;
+	border: 2px solid black;
+	margin: 2px;
+	border-radius: 15%;
+	font-weight: 700;
+}

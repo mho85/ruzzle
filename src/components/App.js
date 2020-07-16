@@ -3,6 +3,7 @@ import '../styles/App.scss'
 
 import Letters from './blocks/Letters'
 import AddWord from './blocks/AddWord'
+import Words from './blocks/Words'
 
 const squareSize = 4
 
@@ -54,7 +55,7 @@ const randomLetters = () => {
 export default function App() {
 
   // GAME
-  const [foundWords, setFoundWords] = useState(["a"])
+  const [foundWords, setFoundWords] = useState(["AB", "BC"])
 
   const letters = randomLetters()
   console.log(letters)
@@ -65,6 +66,7 @@ export default function App() {
       <Letters letters={letters} />
       <AddWord />
       <p>{foundWords.length > 0 && foundWords[foundWords.length - 1]}</p>
+      <Words words={foundWords} />
     </div>
   )
 }

@@ -2,3 +2,14 @@
 	width: 100vw;
 	padding: 0 0.5em;
 }
+
+.button {
+	color: white;
+	background-color: rgba(129, 118, 103, 0.7);
+	padding: 0.5em 1em;
+	border: 0;
+}
+
+.disabled {
+	cursor: not-allowed;
+}

@@ -26,8 +26,13 @@ export default function AddWord() {
           onChange={e => setWord(e.target.value)}
           value={word}
         />
-        <input type="submit" value="Ajouter" />
+        <input
+          className="button"
+          type="submit"
+          value="Ajouter"
+        />
         <button
+          className="button"
           onClick={resetField}
         >
           Effacer

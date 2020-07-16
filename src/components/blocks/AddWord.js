@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/AddWord.scss'
+// import '../styles/AddWord.scss'
 
 export default function AddWord() {
   return (

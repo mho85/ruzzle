@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import fs from 'fs'
 import '../styles/App.scss'
 
 import Letters from './blocks/Letters'
 import AddWord from './blocks/AddWord'
 import Words from './blocks/Words'
+import Timer from './blocks/Timer'
 
 const squareSize = 4
 
@@ -15,7 +16,7 @@ const squareSize = 4
 //   console.log(txtString.toString())
 // })
 
-
+const GAME_SECONDS = 60000
 
 /** Create an array of random letters */
 const randomLetters = () => {
@@ -62,10 +63,30 @@ const randomLetters = () => {
   return letters
 }
 
+/** Retrieve time left */
+const getTimeLeft = (timer) => {
+  return Math.ceil((timer._idleStart + timer._idleTimeout - Date.now()) / 1000)
+}
+
 export default function App() {
 
-  // GAME
+  // State
   const [foundWords, setFoundWords] = useState(["AB", "BC"])
+  const [ongoingGame, setOngoingGame] = useState(false)
+
+  useEffect(() => {
+    if (!ongoingGame) {
+      setOngoingGame(true)
+      setTimeout(() => {
+        alert("End of game")
+        setOngoingGame(false)
+      }, GAME_SECONDS)
+
+      let gameStart = new Date();
+      let gameEnd = gameStart.setDate(gameStart.getMinutes() + GAME_SECONDS / 60000)
+
+    }
+  }, [ongoingGame])
 
   const letters = randomLetters()
   console.log(letters)
@@ -73,6 +94,7 @@ export default function App() {
   return (
     <div id="app-container">
       <p>Ruzzle</p>
+      <Timer progress={50} />
       <Letters letters={letters} />
       <AddWord />
       <p>{foundWords.length > 0 && foundWords[foundWords.length - 1]}</p>

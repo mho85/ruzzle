@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+// import fs from 'fs'
 import '../styles/App.scss'
 
 import Letters from './blocks/Letters'
@@ -6,6 +7,15 @@ import AddWord from './blocks/AddWord'
 import Words from './blocks/Words'
 
 const squareSize = 4
+
+/** Parse dictionary */
+// const filePath = '../assets/words_alpha.txt'
+// fs.readFile(filePath, (error, txtString) => {
+//   if (error) throw error;
+//   console.log(txtString.toString())
+// })
+
+
 
 /** Create an array of random letters */
 const randomLetters = () => {

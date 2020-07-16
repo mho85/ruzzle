@@ -67,6 +67,10 @@ export default function App() {
       <AddWord />
       <p>{foundWords.length > 0 && foundWords[foundWords.length - 1]}</p>
       <Words words={foundWords} />
+      <div id="footer">
+        <p>Mots trouvés: {foundWords.length} sur {53}</p>
+        <p><i>(Cliquez sur un mot pour connaître la définition)</i></p>
+      </div>
     </div>
   )
 }
